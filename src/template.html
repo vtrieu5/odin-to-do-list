@@ -3,16 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Odin Restaurant</title>
+    <title>Odin To Do List</title>
 </head>
 <body>
-    <header>
+    <div id="container">
+        <header>TO DO LIST</header>
         <nav>
-            <button id="btn-home">Home</button>
-            <button id="btn-menu">Menu</button>
-            <button id="btn-contact">Contact</button>
+            <ul>
+                <li><button id="btnHome">Home</button></li>
+                <li><button id="btnToday">Today</button></li>
+                <li><button id="btnWeek">Week</button></li>
+                <li><button id="btnMonth">Month</button></li>
+                <li>
+                    <div id="btnProjects">Projects</div>
+                    <div id="projectsList"></div>
+                </li>
+            </ul>
+        <div id="navAdd">
+            <button id="btnAddProject">Add Project</button>
+            <button id="btnAddItem">Add Item</button>
+        </div>
         </nav>
-    </header>
-    <div id="content"></div> 
+        <div id="content" tab="home">
+        </div> 
+    </div>
+    <dialog id="addItemDialog">
+        <form method="dialog" id="addItemForm">
+            <label for="addTitle">Title</label>
+            <input type="text" id="addTitle" required>
+            <label for="addDescription">Description</label>
+            <textarea id="addDescription"></textarea>
+            <label for="addDueDate">Due Date</label>
+            <input type="date" id="addDueDate" required>
+            <ul class="radioPriority">
+                <li>
+                    <input type="radio" id="addPriorityLow" class="addPriority" name="addPriority" value="low" checked>
+                    <label for="addPriorityLow">Low</label>
+                </li>
+                <li>
+                    <input type="radio" id="addPriorityMedium" class="addPriority" name="addPriority" value="medium">
+                    <label for="addPriorityMedium">Medium</label>
+                </li>
+                <li>
+                    <input type="radio" id="addPriorityHigh"  class="addPriority"  name="addPriority" value="high">
+                <label for="addPriorityHigh">High</label>
+                </li>
+            </ul>
+            <div class="formButtons">
+                <button type="submit" id="btnSubmit">Submit</button>
+                <button type="button" id="btnCancel">Cancel</button>
+            </div>
+        </form>
+    </dialog>
+    <dialog id="editItemDialog">
+        <form method="dialog" id="editItemForm">
+            <label for="editTitle">Title</label>
+            <input type="text" id="editTitle" required>
+            <label for="editDescription">Description</label>
+            <textarea id="editDescription"></textarea>
+            <label for="editDueDate">Due Date</label>
+            <input type="date" id="editDueDate" required>
+            <ul class="radioPriority">
+                <li>
+                    <input type="radio" id="editPriorityLow" class="editPriority" name="editPriority" value="low">
+                    <label for="editPriorityLow">Low</label>
+                </li>
+                <li>
+                    <input type="radio" id="editPriorityMedium" class="editPriority" name="editPriority" value="medium">
+                    <label for="editPriorityMedium">Medium</label>
+                </li>
+                <li>
+                    <input type="radio" id="editPriorityHigh"  class="editPriority"  name="editPriority" value="high">
+                    <label for="editPriorityHigh">High</label>
+                </li>
+            </ul>
+            <div class="formButtons">
+                <button type="submit" id="btnConfirmEdit">Confirm Edit</button>
+                <button type="button" id="btnCancelEdit">Cancel</button>
+            </div>
+        </form>
+    </dialog>
+    <dialog id="addProjectDialog">
+        <form method="dialog" id="addProjectForm">
+            <label for="projectTitle">Project Title</label>
+            <input type="text" id="projectTitle" required>
+            <div class="formButtons">
+                <button type="submit" id="projectSubmit">Submit</button>
+                <button type="button" id="projectCancel">Cancel</button>
+            </div>
+        </form>
+    </dialog>
 </body>
 </html>
